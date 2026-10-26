@@ -23,7 +23,7 @@
   .meta{font-size:11px;color:var(--muted);max-width:360px;line-height:1.4}
   .stage{height:calc(100vh - 60px);display:flex;justify-content:center;align-items:flex-start;overflow:auto;background:#0b0c0f;
          background-image:radial-gradient(circle at 1px 1px,#1a1d23 1px,transparent 0);background-size:22px 22px}
-  .stage.desktop iframe{width:100%;max-width:1280px;height:100%;border:0;background:#fff}
+  .stage.desktop iframe{width:100%;max-width:none;height:100%;border:0;background:#fff}
   .stage.mobile{padding:22px 0 60px}
   .stage.mobile iframe{width:390px;height:calc(100vh - 150px);border:10px solid #16181d;border-radius:34px;background:#fff;
          box-shadow:0 20px 60px rgba(0,0,0,.6)}
@@ -48,7 +48,7 @@
       <button class="pill" data-view="mobile" aria-pressed="false">📱 Mobile view</button>
     </div>
 
-    <span class="dim" id="dim">1280 px</span>
+    <span class="dim" id="dim">Full width</span>
     <div class="spacer"></div>
     <div class="meta">Copy is the client's final draft (verbatim). Victor's photo is his own (from liberation.coach); supporting scene images are licensed stock. No AI likeness.</div>
   </div>
@@ -63,7 +63,7 @@
   document.querySelectorAll('[data-design]').forEach(function(b){b.onclick=function(){frame.src=b.dataset.design;press('design',b);};});
   document.querySelectorAll('[data-view]').forEach(function(b){b.onclick=function(){
       stage.className='stage '+b.dataset.view;press('view',b);
-      dim.textContent=(b.dataset.view==='mobile')?'390 px':'1280 px';};});
+      dim.textContent=(b.dataset.view==='mobile')?'390 px':'Full width';};});
 </script>
 </body>
 </html>
